@@ -1,0 +1,11 @@
+AWSTemplateFormatVersion: 2010-09-09
+Resources:
+  myEC2Instance:
+    Type: t2.micro
+    Properties:
+      SecurityGroupIds:
+        - !ImportValue SG1Name
+      SubnetId: !ImportValue Subnet1Name
+      Tags:
+        - Key: Name
+          Value: CFec2
